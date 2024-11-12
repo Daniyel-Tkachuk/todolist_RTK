@@ -2,9 +2,9 @@ import { ResultCode } from "common/enums"
 import { handleServerAppError } from "common/utils/handleServerAppError"
 import { handleServerNetworkError } from "common/utils/handleServerNetworkError"
 import { Dispatch } from "redux"
-import { setAppStatusAC } from "../../../app/app-reducer"
+import { setAppStatus } from "../../../app/app-reducer"
 import { clearTasksAC } from "../../todolists/model/tasks-reducer"
-import { clearTodolistsAC, setTodolistsAC } from "../../todolists/model/todolists-reducer"
+import { clearTodolistsAC } from "../../todolists/model/todolists-reducer"
 import { authApi } from "../api/authAPI"
 import { LoginArgs } from "../api/authAPI.types"
 
@@ -41,12 +41,12 @@ type ActionsType = ReturnType<typeof setIsLoggedInAC> | ReturnType<typeof setIsI
 
 // thunks
 export const loginTC = (data: LoginArgs) => (dispatch: Dispatch) => {
-  dispatch(setAppStatusAC("loading"))
+  dispatch(setAppStatus({ status: "loading" }))
   authApi
     .login(data)
     .then((res) => {
       if (res.data.resultCode === ResultCode.Success) {
-        dispatch(setAppStatusAC("succeeded"))
+        dispatch(setAppStatus({ status: "succeeded" }))
         dispatch(setIsLoggedInAC(true))
         localStorage.setItem("sn-token", res.data.data.token)
       } else {
@@ -59,12 +59,12 @@ export const loginTC = (data: LoginArgs) => (dispatch: Dispatch) => {
 }
 
 export const logoutTC = () => (dispatch: Dispatch) => {
-  dispatch(setAppStatusAC("loading"))
+  dispatch(setAppStatus({ status: "loading" }))
   authApi
     .logout()
     .then((res) => {
       if (res.data.resultCode === ResultCode.Success) {
-        dispatch(setAppStatusAC("succeeded"))
+        dispatch(setAppStatus({ status: "succeeded" }))
         dispatch(setIsLoggedInAC(false))
         dispatch(clearTasksAC())
         dispatch(clearTodolistsAC())
@@ -79,12 +79,12 @@ export const logoutTC = () => (dispatch: Dispatch) => {
 }
 
 export const initializeAppTC = () => (dispatch: Dispatch) => {
-  dispatch(setAppStatusAC("loading"))
+  dispatch(setAppStatus({ status: "loading" }))
   authApi
     .me()
     .then((res) => {
       if (res.data.resultCode === ResultCode.Success) {
-        dispatch(setAppStatusAC("succeeded"))
+        dispatch(setAppStatus({ status: "succeeded" }))
         dispatch(setIsLoggedInAC(true))
       } else {
         handleServerAppError(res.data, dispatch)
