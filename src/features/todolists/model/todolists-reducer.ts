@@ -14,7 +14,7 @@ export type DomainTodolist = Todolist & {
   entityStatus: RequestStatus
 }
 
-const todolistsSlice = createSlice({
+export const todolistsSlice = createSlice({
   name: "todolists",
   initialState: [] as DomainTodolist[],
   reducers: (create) => ({

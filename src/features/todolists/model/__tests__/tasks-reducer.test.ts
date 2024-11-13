@@ -1,5 +1,5 @@
 import { TaskPriority, TaskStatus } from "common/enums"
-import { addTaskAC, removeTaskAC, tasksReducer, TasksStateType, updateTaskAC } from "../tasks-reducer"
+import { addTask, removeTask, tasksReducer, TasksStateType, updateTask } from "../tasks-reducer"
 import { addTodolist, removeTodolist } from "../todolists-reducer"
 
 let startState: TasksStateType = {}
@@ -88,7 +88,7 @@ beforeEach(() => {
 test("correct task should be deleted from correct array", () => {
   const endState = tasksReducer(
     startState,
-    removeTaskAC({
+    removeTask({
       taskId: "2",
       todolistId: "todolistId2",
     }),
@@ -100,7 +100,7 @@ test("correct task should be deleted from correct array", () => {
 })
 
 test("correct task should be added to correct array", () => {
-  const action = addTaskAC({
+  const action = addTask({
     task: {
       todoListId: "todolistId2",
       title: "juce",
@@ -125,7 +125,7 @@ test("correct task should be added to correct array", () => {
 })
 
 test("status of specified task should be changed", () => {
-  const action = updateTaskAC({ todolistId: "todolistId2", taskId: "2", domainModel: { status: TaskStatus.New } })
+  const action = updateTask({ todolistId: "todolistId2", taskId: "2", domainModel: { status: TaskStatus.New } })
 
   const endState = tasksReducer(startState, action)
 
@@ -134,7 +134,7 @@ test("status of specified task should be changed", () => {
 })
 
 test("title of specified task should be changed", () => {
-  const action = updateTaskAC({ todolistId: "todolistId2", taskId: "2", domainModel: { title: "coffee" } })
+  const action = updateTask({ todolistId: "todolistId2", taskId: "2", domainModel: { title: "coffee" } })
 
   const endState = tasksReducer(startState, action)
 

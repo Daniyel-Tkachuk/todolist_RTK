@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit"
 export type ThemeMode = "dark" | "light"
 export type RequestStatus = "idle" | "loading" | "succeeded" | "failed"
 
-const appSlice = createSlice({
+export const appSlice = createSlice({
   name: "app",
   initialState: {
     themeMode: "light" as ThemeMode,

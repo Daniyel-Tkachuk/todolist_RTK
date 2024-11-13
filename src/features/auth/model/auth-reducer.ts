@@ -3,13 +3,13 @@ import { handleServerAppError } from "common/utils/handleServerAppError"
 import { handleServerNetworkError } from "common/utils/handleServerNetworkError"
 import { Dispatch } from "redux"
 import { setAppStatus } from "../../../app/app-reducer"
-import { clearTasksAC } from "../../todolists/model/tasks-reducer"
+import { clearTasks } from "../../todolists/model/tasks-reducer"
 import { authApi } from "../api/authAPI"
 import { LoginArgs } from "../api/authAPI.types"
 import { createSlice } from "@reduxjs/toolkit"
 import { clearTodolists } from "../../todolists/model/todolists-reducer"
 
-const authSlice = createSlice({
+export const authSlice = createSlice({
   name: "auth",
   initialState: {
     isLoggedIn: false,
@@ -60,7 +60,7 @@ export const logoutTC = () => (dispatch: Dispatch) => {
       if (res.data.resultCode === ResultCode.Success) {
         dispatch(setAppStatus({ status: "succeeded" }))
         dispatch(setIsLoggedIn({ isLoggedIn: false }))
-        dispatch(clearTasksAC())
+        dispatch(clearTasks())
         dispatch(clearTodolists())
         localStorage.removeItem("sn-token")
       } else {
