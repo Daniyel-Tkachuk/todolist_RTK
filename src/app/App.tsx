@@ -7,7 +7,7 @@ import { useEffect } from "react"
 import { Outlet } from "react-router-dom"
 import { initializeAppTC } from "../features/auth/model/auth-reducer"
 import { selectIsInitialized } from "../features/auth/model/authSelectors"
-import { selectThemeMode } from "./appSelectors"
+import { selectThemeMode } from "./app-reducer"
 import CircularProgress from "@mui/material/CircularProgress"
 import s from "./App.module.css"
 
