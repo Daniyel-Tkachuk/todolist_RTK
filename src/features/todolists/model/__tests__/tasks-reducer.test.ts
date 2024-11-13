@@ -1,6 +1,6 @@
 import { TaskPriority, TaskStatus } from "common/enums"
 import { addTaskAC, removeTaskAC, tasksReducer, TasksStateType, updateTaskAC } from "../tasks-reducer"
-import { addTodolistAC, removeTodolistAC } from "../todolists-reducer"
+import { addTodolist, removeTodolist } from "../todolists-reducer"
 
 let startState: TasksStateType = {}
 
@@ -143,11 +143,13 @@ test("title of specified task should be changed", () => {
 })
 
 test("new array should be added when new todolist is added", () => {
-  const action = addTodolistAC({
-    id: "blabla",
-    title: "new todolist",
-    order: 0,
-    addedDate: "",
+  const action = addTodolist({
+    todolist: {
+      id: "blabla",
+      title: "new todolist",
+      order: 0,
+      addedDate: "",
+    },
   })
 
   const endState = tasksReducer(startState, action)
@@ -163,7 +165,7 @@ test("new array should be added when new todolist is added", () => {
 })
 
 test("property with todolistId should be deleted", () => {
-  const endState = tasksReducer(startState, removeTodolistAC("todolistId2"))
+  const endState = tasksReducer(startState, removeTodolist({ id: "todolistId2" }))
 
   const keys = Object.keys(endState)
 

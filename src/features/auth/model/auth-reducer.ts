@@ -4,40 +4,34 @@ import { handleServerNetworkError } from "common/utils/handleServerNetworkError"
 import { Dispatch } from "redux"
 import { setAppStatus } from "../../../app/app-reducer"
 import { clearTasksAC } from "../../todolists/model/tasks-reducer"
-import { clearTodolistsAC } from "../../todolists/model/todolists-reducer"
 import { authApi } from "../api/authAPI"
 import { LoginArgs } from "../api/authAPI.types"
+import { createSlice } from "@reduxjs/toolkit"
+import { clearTodolists } from "../../todolists/model/todolists-reducer"
 
-type InitialStateType = typeof initialState
+const authSlice = createSlice({
+  name: "auth",
+  initialState: {
+    isLoggedIn: false,
+    isInitialized: false,
+  },
+  reducers: (create) => ({
+    setIsLoggedIn: create.reducer<{ isLoggedIn: boolean }>((state, action) => {
+      state.isLoggedIn = action.payload.isLoggedIn
+    }),
+    setIsInitialized: create.reducer<{ isInitialized: boolean }>((state, action) => {
+      state.isInitialized = action.payload.isInitialized
+    }),
+  }),
+  selectors: {
+    selectIsLoggedIn: (state) => state.isLoggedIn,
+    selectIsInitialized: (state) => state.isInitialized,
+  },
+})
 
-const initialState = {
-  isLoggedIn: false,
-  isInitialized: false,
-}
-
-export const authReducer = (state: InitialStateType = initialState, action: ActionsType): InitialStateType => {
-  switch (action.type) {
-    case "SET_IS_LOGGED_IN":
-      return { ...state, isLoggedIn: action.payload.isLoggedIn }
-
-    case "SET_IS_INITIALIZED":
-      return { ...state, isInitialized: action.payload.isInitialized }
-
-    default:
-      return state
-  }
-}
-// Action creators
-const setIsLoggedInAC = (isLoggedIn: boolean) => {
-  return { type: "SET_IS_LOGGED_IN", payload: { isLoggedIn } } as const
-}
-
-const setIsInitializedAC = (isInitialized: boolean) => {
-  return { type: "SET_IS_INITIALIZED", payload: { isInitialized } } as const
-}
-
-// Actions types
-type ActionsType = ReturnType<typeof setIsLoggedInAC> | ReturnType<typeof setIsInitializedAC>
+export const authReducer = authSlice.reducer
+export const { setIsLoggedIn, setIsInitialized } = authSlice.actions
+export const { selectIsLoggedIn, selectIsInitialized } = authSlice.selectors
 
 // thunks
 export const loginTC = (data: LoginArgs) => (dispatch: Dispatch) => {
@@ -47,7 +41,7 @@ export const loginTC = (data: LoginArgs) => (dispatch: Dispatch) => {
     .then((res) => {
       if (res.data.resultCode === ResultCode.Success) {
         dispatch(setAppStatus({ status: "succeeded" }))
-        dispatch(setIsLoggedInAC(true))
+        dispatch(setIsLoggedIn({ isLoggedIn: true }))
         localStorage.setItem("sn-token", res.data.data.token)
       } else {
         handleServerAppError(res.data, dispatch)
@@ -65,9 +59,9 @@ export const logoutTC = () => (dispatch: Dispatch) => {
     .then((res) => {
       if (res.data.resultCode === ResultCode.Success) {
         dispatch(setAppStatus({ status: "succeeded" }))
-        dispatch(setIsLoggedInAC(false))
+        dispatch(setIsLoggedIn({ isLoggedIn: false }))
         dispatch(clearTasksAC())
-        dispatch(clearTodolistsAC())
+        dispatch(clearTodolists())
         localStorage.removeItem("sn-token")
       } else {
         handleServerAppError(res.data, dispatch)
@@ -85,7 +79,7 @@ export const initializeAppTC = () => (dispatch: Dispatch) => {
     .then((res) => {
       if (res.data.resultCode === ResultCode.Success) {
         dispatch(setAppStatus({ status: "succeeded" }))
-        dispatch(setIsLoggedInAC(true))
+        dispatch(setIsLoggedIn({ isLoggedIn: true }))
       } else {
         handleServerAppError(res.data, dispatch)
       }
@@ -94,6 +88,6 @@ export const initializeAppTC = () => (dispatch: Dispatch) => {
       handleServerNetworkError(error, dispatch)
     })
     .finally(() => {
-      dispatch(setIsInitializedAC(true))
+      dispatch(setIsInitialized({ isInitialized: true }))
     })
 }
