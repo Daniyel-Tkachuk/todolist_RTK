@@ -1,8 +1,8 @@
 import { UnknownAction } from "redux"
 import { ThunkDispatch } from "redux-thunk"
-import { authReducer, authSlice } from "../features/auth/model/auth-reducer"
-import { tasksReducer, tasksSlice } from "../features/todolists/model/tasks-reducer"
-import { todolistsReducer, todolistsSlice } from "../features/todolists/model/todolists-reducer"
+import { authReducer, authSlice } from "features/auth/model/auth-reducer"
+import { tasksReducer, tasksSlice } from "features/todolists/model/tasks-reducer"
+import { todolistsReducer, todolistsSlice } from "features/todolists/model/todolists-reducer"
 import { appReducer, appSlice } from "./app-reducer"
 import { configureStore } from "@reduxjs/toolkit"
 

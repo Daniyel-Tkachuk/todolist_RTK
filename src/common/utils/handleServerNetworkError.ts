@@ -1,5 +1,5 @@
 import { Dispatch } from "redux"
-import { setAppError, setAppStatus } from "../../app/app-reducer"
+import { setAppError, setAppStatus } from "app/app-reducer"
 
 export const handleServerNetworkError = (error: { message: string }, dispatch: Dispatch) => {
   dispatch(setAppError({ error: error.message }))

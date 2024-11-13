@@ -12,7 +12,7 @@ import { Controller, SubmitHandler, useForm } from "react-hook-form"
 import { Navigate } from "react-router-dom"
 import { loginTC, selectIsLoggedIn } from "../../model/auth-reducer"
 import s from "./Login.module.css"
-import { selectThemeMode } from "../../../../app/app-reducer"
+import { selectThemeMode } from "app/app-reducer"
 
 type Inputs = {
   email: string
