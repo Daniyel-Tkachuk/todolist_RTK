@@ -33,10 +33,18 @@ export const todolistsApi = createApi({
         method: "DELETE",
       }),
     }),
+    updateTodolist: build.mutation<BaseResponse, { id: string; title: string }>({
+      query: ({ id, title }) => ({
+        url: `todo-lists/${id}`,
+        method: "PUT",
+        body: { title },
+      }),
+    }),
   }),
 })
 
-export const { useGetTodolistsQuery, useAddTodolistMutation, useRemoveTodolistMutation } = todolistsApi
+export const { useGetTodolistsQuery, useAddTodolistMutation, useRemoveTodolistMutation, useUpdateTodolistMutation } =
+  todolistsApi
 
 export const _todolistsApi = {
   getTodolists() {

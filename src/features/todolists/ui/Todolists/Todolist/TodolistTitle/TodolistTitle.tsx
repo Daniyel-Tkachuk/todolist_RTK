@@ -4,7 +4,7 @@ import { EditableSpan } from "common/components"
 import { useAppDispatch } from "common/hooks"
 import { DomainTodolist, removeTodolistTC, updateTodolistTitleTC } from "../../../../model/todolists-reducer"
 import s from "./TodolistTitle.module.css"
-import { useRemoveTodolistMutation } from "features/todolists/api/_todolistsApi"
+import { useRemoveTodolistMutation, useUpdateTodolistMutation } from "features/todolists/api/_todolistsApi"
 
 type Props = {
   todolist: DomainTodolist
@@ -14,14 +14,13 @@ export const TodolistTitle = ({ todolist }: Props) => {
   const { title, id, entityStatus } = todolist
 
   const [removeTodolist] = useRemoveTodolistMutation()
-
-  const dispatch = useAppDispatch()
+  const [updateTodolist] = useUpdateTodolistMutation()
 
   const removeTodolistHandler = () => {
     removeTodolist(id)
   }
   const updateTodolistHandler = (title: string) => {
-    dispatch(updateTodolistTitleTC({ id, title }))
+    updateTodolist({ id, title })
   }
 
   return (
