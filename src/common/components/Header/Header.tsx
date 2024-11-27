@@ -10,8 +10,7 @@ import { getTheme } from "common/theme"
 import { MenuButton } from "common/components"
 import { useLogoutMutation } from "features/auth/api/_authApi"
 import { ResultCode } from "common/enums"
-import { clearTasks } from "features/todolists/model/tasks-reducer"
-import { clearTodolists } from "features/todolists/model/todolists-reducer"
+import { baseApi } from "app/baseApi"
 
 export const Header = () => {
   const dispatch = useAppDispatch()
@@ -29,14 +28,16 @@ export const Header = () => {
   }
 
   const logoutHandler = () => {
-    logout().then((res) => {
-      if (res.data?.resultCode === ResultCode.Success) {
-        dispatch(setIsLoggedIn({ isLoggedIn: false }))
-        localStorage.removeItem("sn-token")
-        dispatch(clearTasks())
-        dispatch(clearTodolists())
-      }
-    })
+    logout()
+      .then((res) => {
+        if (res.data?.resultCode === ResultCode.Success) {
+          dispatch(setIsLoggedIn({ isLoggedIn: false }))
+          localStorage.removeItem("sn-token")
+        }
+      })
+      .then(() => {
+        dispatch(baseApi.util.invalidateTags(["Todolists"]))
+      })
   }
 
   return (
