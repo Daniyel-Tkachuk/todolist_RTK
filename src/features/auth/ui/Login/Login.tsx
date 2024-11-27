@@ -10,20 +10,18 @@ import { useAppDispatch, useAppSelector } from "common/hooks"
 import { getTheme } from "common/theme"
 import { Controller, SubmitHandler, useForm } from "react-hook-form"
 import { Navigate } from "react-router-dom"
-import { loginTC, selectIsLoggedIn } from "../../model/auth-reducer"
 import s from "./Login.module.css"
-import { selectThemeMode } from "app/app-reducer"
-
-type Inputs = {
-  email: string
-  password: string
-  rememberMe: boolean
-}
+import { selectIsLoggedIn, selectThemeMode, setIsLoggedIn } from "app/app-reducer"
+import { LoginArgs } from "features/auth/api/authAPI.types"
+import { useLoginMutation } from "features/auth/api/_authApi"
+import { ResultCode } from "common/enums"
 
 export const Login = () => {
   const themeMode = useAppSelector(selectThemeMode)
   const isLoggedIn = useAppSelector(selectIsLoggedIn)
   const theme = getTheme(themeMode)
+
+  const [login] = useLoginMutation()
 
   const dispatch = useAppDispatch()
 
@@ -33,11 +31,19 @@ export const Login = () => {
     reset,
     control,
     formState: { errors },
-  } = useForm<Inputs>({ defaultValues: { email: "", password: "", rememberMe: false } })
+  } = useForm<LoginArgs>({ defaultValues: { email: "", password: "", rememberMe: false } })
 
-  const onSubmit: SubmitHandler<Inputs> = (data) => {
-    dispatch(loginTC(data))
-    reset()
+  const onSubmit: SubmitHandler<LoginArgs> = (data) => {
+    login(data)
+      .then((res) => {
+        if (res.data?.resultCode === ResultCode.Success) {
+          dispatch(setIsLoggedIn({ isLoggedIn: true }))
+          localStorage.setItem("sn-token", res.data.data.token)
+        }
+      })
+      .finally(() => {
+        reset()
+      })
   }
 
   if (isLoggedIn) {
