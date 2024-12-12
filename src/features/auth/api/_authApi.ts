@@ -22,7 +22,6 @@ export const authApi = baseApi.injectEndpoints({
     }),
   }),
 })
-
-const bla = 1;
+const bla = 2
 
 export const { useLogoutMutation, useLoginMutation, useMeQuery } = authApi
