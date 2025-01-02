@@ -3,30 +3,23 @@ import { ThemeProvider } from "@mui/material/styles"
 import { ErrorSnackbar, Header } from "common/components"
 import { useAppDispatch, useAppSelector } from "common/hooks"
 import { getTheme } from "common/theme"
-import { useEffect, useState } from "react"
+import { useEffect } from "react"
 import { Outlet } from "react-router-dom"
-import { selectThemeMode, setIsLoggedIn } from "./app-reducer"
+import { initializeAppTC } from "../features/auth/model/auth-reducer"
+import { selectIsInitialized } from "../features/auth/model/authSelectors"
+import { selectThemeMode } from "./appSelectors"
 import CircularProgress from "@mui/material/CircularProgress"
 import s from "./App.module.css"
-import { useMeQuery } from "features/auth/api/_authApi"
-import { ResultCode } from "common/enums"
 
 export const App = () => {
   const themeMode = useAppSelector(selectThemeMode)
-  const [isInitialized, setIsInitialized] = useState(false)
-
-  const { data, isLoading } = useMeQuery()
+  const isInitialized = useAppSelector(selectIsInitialized)
 
   const dispatch = useAppDispatch()
 
   useEffect(() => {
-    if (!isLoading) {
-      setIsInitialized(true)
-      if (data?.resultCode === ResultCode.Success) {
-        dispatch(setIsLoggedIn({ isLoggedIn: true }))
-      }
-    }
-  }, [isLoading, data])
+    dispatch(initializeAppTC())
+  }, [])
 
   return (
     <ThemeProvider theme={getTheme(themeMode)}>
