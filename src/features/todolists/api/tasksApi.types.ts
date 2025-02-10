@@ -1,4 +1,3 @@
-import { FieldError } from "common/types/types"
 import { TaskPriority, TaskStatus } from "common/enums/enums"
 
 export type DomainTask = {
@@ -20,22 +19,6 @@ export type GetTasksResponse = {
   items: DomainTask[]
 }
 
-export type CreateTaskResponse = {
-  resultCode: number
-  messages: string[]
-  fieldsErrors: FieldError[]
-  data: {
-    item: DomainTask
-  }
-}
-
-export type DeleteTaskResponse = {
-  resultCode: number
-  messages: string[]
-  fieldsErrors: FieldError[]
-  data: {}
-}
-
 export type UpdateTaskModel = {
   title: string
   description: string
@@ -43,13 +26,4 @@ export type UpdateTaskModel = {
   priority: TaskPriority
   startDate: string
   deadline: string
-}
-
-export type UpdateTaskResponse = {
-  resultCode: number
-  messages: string[]
-  fieldsErrors: FieldError[]
-  data: {
-    item: DomainTask
-  }
 }

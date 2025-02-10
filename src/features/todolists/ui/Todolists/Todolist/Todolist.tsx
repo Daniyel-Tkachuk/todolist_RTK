@@ -1,5 +1,5 @@
-import { AddItemForm } from "../../../../../common/components/AddItemForm/AddItemForm"
-import { useAppDispatch } from "../../../../../common/hooks/useAppDispatch"
+import { AddItemForm } from "common/components"
+import { useAppDispatch } from "common/hooks"
 import { addTaskAC } from "../../../model/tasks-reducer"
 import { TodolistType } from "../../../model/todolists-reducer"
 import { FilterTasksButtons } from "./FilterTasksButtons/FilterTasksButtons"
