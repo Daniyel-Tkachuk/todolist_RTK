@@ -1,17 +1,9 @@
 import Checkbox from "@mui/material/Checkbox"
-import axios from "axios"
 import React, { ChangeEvent, useEffect, useState } from "react"
 import { AddItemForm } from "common/components"
 import { EditableSpan } from "common/components"
 import { Todolist } from "../features/todolists/api/todolistsApi.types"
-import {
-  CreateTaskResponse,
-  DeleteTaskResponse,
-  DomainTask,
-  GetTasksResponse,
-  UpdateTaskModel,
-  UpdateTaskResponse,
-} from "../features/todolists/api/tasksApi.types"
+import { DomainTask, UpdateTaskModel } from "../features/todolists/api/tasksApi.types"
 import { todolistsApi } from "../features/todolists/api/todolistsApi"
 import { TaskStatus } from "common/enums/enums"
 import { tasksApi } from "../features/todolists/api/tasksApi"
