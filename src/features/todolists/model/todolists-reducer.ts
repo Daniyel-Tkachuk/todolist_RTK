@@ -1,4 +1,3 @@
-import { v1 } from "uuid"
 import { Todolist } from "../api/todolistsApi.types"
 import { AppDispatch } from "../../../app/store"
 import { todolistsApi } from "../api/todolistsApi"
@@ -21,14 +20,9 @@ export const todolistsReducer = (state: DomainTodolist[] = initialState, action:
     }
 
     case "ADD-TODOLIST": {
-      const { title, todolistId } = action.payload
-
       const newTodolist: DomainTodolist = {
-        id: todolistId,
-        title,
         filter: "all",
-        addedDate: "",
-        order: 0,
+        ...action.payload.todolist,
       }
       return [...state, newTodolist]
     }
@@ -51,8 +45,8 @@ export const removeTodolistAC = (id: string) => {
   return { type: "REMOVE-TODOLIST", payload: { id } } as const
 }
 
-export const addTodolistAC = (title: string) => {
-  return { type: "ADD-TODOLIST", payload: { title, todolistId: v1() } } as const
+export const addTodolistAC = (todolist: Todolist) => {
+  return { type: "ADD-TODOLIST", payload: { todolist } } as const
 }
 
 export const changeTodolistTitleAC = (payload: { id: string; title: string }) => {
@@ -70,9 +64,30 @@ export const setTodolistAC = (todolists: Todolist[]) => {
   } as const
 }
 
-export const fetchTodolistsThunk = (dispatch: AppDispatch) => {
+// ------------------ THUNKS ---------------------------
+
+export const fetchTodolistsThunk = () => (dispatch: AppDispatch) => {
   todolistsApi.getTodolists().then((res) => {
     dispatch(setTodolistAC(res.data))
+  })
+}
+
+export const addTodolistTC = (title: string) => (dispatch: AppDispatch) => {
+  todolistsApi.createTodolist(title).then((res) => {
+    const todolist = res.data.data.item
+    dispatch(addTodolistAC(todolist))
+  })
+}
+
+export const removeTodolistTC = (id: string) => (dispatch: AppDispatch) => {
+  todolistsApi.deleteTodolist(id).then(() => {
+    dispatch(removeTodolistAC(id))
+  })
+}
+
+export const updateTodolistTitleTC = (args: { id: string; title: string }) => (dispatch: AppDispatch) => {
+  todolistsApi.updateTodolist(args).then(() => {
+    dispatch(changeTodolistTitleAC(args))
   })
 }
 
