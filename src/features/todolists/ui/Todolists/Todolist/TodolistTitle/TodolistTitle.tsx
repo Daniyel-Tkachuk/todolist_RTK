@@ -2,11 +2,11 @@ import DeleteIcon from "@mui/icons-material/Delete"
 import IconButton from "@mui/material/IconButton"
 import { EditableSpan } from "common/components"
 import { useAppDispatch } from "common/hooks"
-import { changeTodolistTitleAC, removeTodolistAC, TodolistType } from "../../../../model/todolists-reducer"
+import { changeTodolistTitleAC, removeTodolistAC, DomainTodolist } from "../../../../model/todolists-reducer"
 import s from "./TodolistTitle.module.css"
 
 type Props = {
-  todolist: TodolistType
+  todolist: DomainTodolist
 }
 
 export const TodolistTitle = ({ todolist }: Props) => {
