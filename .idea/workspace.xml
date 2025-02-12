@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8a6b8077-0164-4c5c-9391-fe448cb2bad3" name="Changes" comment="added ErrorSnackbar">
+    <list default="true" id="8a6b8077-0164-4c5c-9391-fe448cb2bad3" name="Changes" comment="added implement button disable during item deletion request">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/common/enums/enums.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/enums/enums.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/features/todolists/model/tasks-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/todolists/model/tasks-reducer.ts" afterDir="false" />
@@ -90,7 +90,7 @@
       <workItem from="1739246304827" duration="19799000" />
       <workItem from="1739296647508" duration="2118000" />
       <workItem from="1739335749805" duration="2136000" />
-      <workItem from="1739337937594" duration="7454000" />
+      <workItem from="1739337937594" duration="7853000" />
     </task>
     <task id="LOCAL-00001" summary="test commit">
       <option name="closed" value="true" />
@@ -276,7 +276,15 @@
       <option name="project" value="LOCAL" />
       <updated>1739355465173</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="added implement button disable during item deletion request">
+      <option name="closed" value="true" />
+      <created>1739362547973</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1739362547973</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -299,6 +307,7 @@
     <MESSAGE value="refactor" />
     <MESSAGE value="added LinerPreloader" />
     <MESSAGE value="added ErrorSnackbar" />
-    <option name="LAST_COMMIT_MESSAGE" value="added ErrorSnackbar" />
+    <MESSAGE value="added implement button disable during item deletion request" />
+    <option name="LAST_COMMIT_MESSAGE" value="added implement button disable during item deletion request" />
   </component>
 </project>
