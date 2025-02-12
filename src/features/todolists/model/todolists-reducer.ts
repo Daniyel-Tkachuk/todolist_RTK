@@ -1,6 +1,7 @@
 import { Todolist } from "../api/todolistsApi.types"
 import { AppDispatch } from "../../../app/store"
 import { todolistsApi } from "../api/todolistsApi"
+import { setAppStatusAC } from "../../../app/app-reducer"
 
 export type FilterValuesType = "all" | "active" | "completed"
 
@@ -67,15 +68,19 @@ export const setTodolistAC = (todolists: Todolist[]) => {
 // ------------------ THUNKS ---------------------------
 
 export const fetchTodolistsThunk = () => (dispatch: AppDispatch) => {
+  dispatch(setAppStatusAC("loading"))
   todolistsApi.getTodolists().then((res) => {
     dispatch(setTodolistAC(res.data))
+    dispatch(setAppStatusAC("succeeded"))
   })
 }
 
 export const addTodolistTC = (title: string) => (dispatch: AppDispatch) => {
+  dispatch(setAppStatusAC("loading"))
   todolistsApi.createTodolist(title).then((res) => {
     const todolist = res.data.data.item
     dispatch(addTodolistAC(todolist))
+    dispatch(setAppStatusAC("succeeded"))
   })
 }
 
