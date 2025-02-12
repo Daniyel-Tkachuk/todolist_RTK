@@ -4,13 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8a6b8077-0164-4c5c-9391-fe448cb2bad3" name="Changes" comment="added LinerPreloader">
-      <change afterPath="$PROJECT_DIR$/src/common/components/ErrorSnackbar/ErrorSnackbar.tsx" afterDir="false" />
+    <list default="true" id="8a6b8077-0164-4c5c-9391-fe448cb2bad3" name="Changes" comment="added ErrorSnackbar">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/app-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app-reducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/appSelectors.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/appSelectors.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/enums/enums.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/enums/enums.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/features/todolists/model/tasks-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/todolists/model/tasks-reducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/todolists/model/todolists-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/todolists/model/todolists-reducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/todolists/ui/Todolists/Todolist/TodolistTitle/TodolistTitle.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/todolists/ui/Todolists/Todolist/TodolistTitle/TodolistTitle.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,7 +90,7 @@
       <workItem from="1739246304827" duration="19799000" />
       <workItem from="1739296647508" duration="2118000" />
       <workItem from="1739335749805" duration="2136000" />
-      <workItem from="1739337937594" duration="4304000" />
+      <workItem from="1739337937594" duration="7454000" />
     </task>
     <task id="LOCAL-00001" summary="test commit">
       <option name="closed" value="true" />
@@ -269,7 +268,15 @@
       <option name="project" value="LOCAL" />
       <updated>1739338448480</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="added ErrorSnackbar">
+      <option name="closed" value="true" />
+      <created>1739355465173</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1739355465173</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -291,6 +298,7 @@
     <MESSAGE value="remove file" />
     <MESSAGE value="refactor" />
     <MESSAGE value="added LinerPreloader" />
-    <option name="LAST_COMMIT_MESSAGE" value="added LinerPreloader" />
+    <MESSAGE value="added ErrorSnackbar" />
+    <option name="LAST_COMMIT_MESSAGE" value="added ErrorSnackbar" />
   </component>
 </project>
