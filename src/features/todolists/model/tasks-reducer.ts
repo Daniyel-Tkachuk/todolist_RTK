@@ -2,6 +2,7 @@ import { AddTodolistActionType, RemoveTodolistActionType } from "./todolists-red
 import { AppDispatch, RootState } from "../../../app/store"
 import { tasksApi } from "../api/tasksApi"
 import { DomainTask, UpdateTaskDomainModel, UpdateTaskModel } from "../api/tasksApi.types"
+import { setAppStatusAC } from "../../../app/app-reducer"
 
 export type TasksStateType = {
   [key: string]: DomainTask[]
@@ -92,8 +93,10 @@ export const updateTaskAC = (payload: { task: DomainTask }) =>
 // ------- THUNKS -------------
 
 export const fetchTasksThunkTC = (todolistId: string) => (dispatch: AppDispatch) => {
+  dispatch(setAppStatusAC("loading"))
   tasksApi.getTasks(todolistId).then((res) => {
     dispatch(setTasksAC({ todolistId, tasks: res.data.items }))
+    dispatch(setAppStatusAC("succeeded"))
   })
 }
 
@@ -104,9 +107,11 @@ export const removeTaskTC = (args: { todolistId: string; taskId: string }) => (d
 }
 
 export const addTaskTC = (args: { todolistId: string; title: string }) => (dispatch: AppDispatch) => {
+  dispatch(setAppStatusAC("loading"))
   tasksApi.createTask(args).then((res) => {
     const task = res.data.data.item
     dispatch(addTaskAC({ task }))
+    dispatch(setAppStatusAC("succeeded"))
   })
 }
 
