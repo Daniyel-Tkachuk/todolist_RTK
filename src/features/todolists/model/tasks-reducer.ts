@@ -4,10 +4,9 @@ import { tasksApi } from "../api/tasksApi"
 import { DomainTask, UpdateTaskDomainModel, UpdateTaskModel } from "../api/tasksApi.types"
 import { setAppErrorAC, setAppStatusAC } from "../../../app/app-reducer"
 import { ResultCode } from "common/enums"
+import { handleServerNetworkError } from "common/utils/handleServerNetworkError"
 
-export type TasksStateType = {
-  [key: string]: DomainTask[]
-}
+export type TasksStateType = Record<string, DomainTask[]>
 
 const initialState: TasksStateType = {}
 
@@ -121,8 +120,7 @@ export const addTaskTC = (args: { todolistId: string; title: string }) => (dispa
       }
     })
     .catch((err) => {
-      dispatch(setAppErrorAC(err.message))
-      dispatch(setAppStatusAC("failed"))
+      handleServerNetworkError(err, dispatch)
     })
 }
 
