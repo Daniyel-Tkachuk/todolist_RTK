@@ -3,6 +3,8 @@ import { AppDispatch } from "../../../app/store"
 import { todolistsApi } from "../api/todolistsApi"
 import { RequestStatus, setAppErrorAC, setAppStatusAC } from "../../../app/app-reducer"
 import { ResultCode } from "common/enums"
+import { handleServerNetworkError } from "common/utils/handleServerNetworkError"
+import { handleServerAppError } from "common/utils/handleServerAppError"
 
 export type FilterValuesType = "all" | "active" | "completed"
 
@@ -88,8 +90,7 @@ export const fetchTodolistsThunk = () => (dispatch: AppDispatch) => {
       dispatch(setAppStatusAC("succeeded"))
     })
     .catch((err) => {
-      dispatch(setAppErrorAC(err.message))
-      dispatch(setAppStatusAC("failed"))
+      handleServerNetworkError(err, dispatch)
     })
 }
 
@@ -103,13 +104,11 @@ export const addTodolistTC = (title: string) => (dispatch: AppDispatch) => {
         dispatch(addTodolistAC(todolist))
         dispatch(setAppStatusAC("succeeded"))
       } else {
-        dispatch(setAppErrorAC(res.data.messages.length ? res.data.messages[0] : "Some error occurred"))
-        dispatch(setAppStatusAC("failed"))
+        handleServerAppError(res.data, dispatch)
       }
     })
     .catch((err) => {
-      dispatch(setAppErrorAC(err.message))
-      dispatch(setAppStatusAC("failed"))
+      handleServerNetworkError(err, dispatch)
     })
 }
 
@@ -129,8 +128,7 @@ export const removeTodolistTC = (id: string) => (dispatch: AppDispatch) => {
       }
     })
     .catch((err) => {
-      dispatch(setAppErrorAC(err.message))
-      dispatch(setAppStatusAC("failed"))
+      handleServerNetworkError(err, dispatch)
       dispatch(changeTodolistEntityStatusAC({ id, entityStatus: "failed" }))
     })
 }
