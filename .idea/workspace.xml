@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8a6b8077-0164-4c5c-9391-fe448cb2bad3" name="Changes" comment="refactor code">
+    <list default="true" id="8a6b8077-0164-4c5c-9391-fe448cb2bad3" name="Changes" comment="added disabled EditableSpan.tsx for Todolist title">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/components/EditableSpan/EditableSpan.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/components/EditableSpan/EditableSpan.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/todolists/ui/Todolists/Todolist/TodolistTitle/TodolistTitle.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/todolists/ui/Todolists/Todolist/TodolistTitle/TodolistTitle.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/todolists/ui/Todolists/Todolist/Tasks/Task/Task.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/todolists/ui/Todolists/Todolist/Tasks/Task/Task.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,7 +91,7 @@
       <workItem from="1739459374991" duration="3066000" />
       <workItem from="1739506042520" duration="3803000" />
       <workItem from="1739529025766" duration="1939000" />
-      <workItem from="1739540264794" duration="984000" />
+      <workItem from="1739540264794" duration="1866000" />
     </task>
     <task id="LOCAL-00001" summary="test commit">
       <option name="closed" value="true" />
@@ -326,7 +325,15 @@
       <option name="project" value="LOCAL" />
       <updated>1739530943245</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="added disabled EditableSpan.tsx for Todolist title">
+      <option name="closed" value="true" />
+      <created>1739541307793</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1739541307793</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -354,6 +361,7 @@
     <MESSAGE value="refactor types" />
     <MESSAGE value="added function (handle error)" />
     <MESSAGE value="refactor code" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor code" />
+    <MESSAGE value="added disabled EditableSpan.tsx for Todolist title" />
+    <option name="LAST_COMMIT_MESSAGE" value="added disabled EditableSpan.tsx for Todolist title" />
   </component>
 </project>
