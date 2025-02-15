@@ -7,3 +7,9 @@ export const instance = axios.create({
     "API-KEY": process.env.REACT_APP_API_KEY,
   },
 })
+
+// перехватчик
+instance.interceptors.request.use(function (config) {
+  config.headers["Authorization"] = `Bearer ${localStorage.getItem("sn-token")}`
+  return config
+})
