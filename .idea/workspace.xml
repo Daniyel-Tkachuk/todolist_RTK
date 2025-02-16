@@ -4,20 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8a6b8077-0164-4c5c-9391-fe448cb2bad3" name="Changes" comment="added interceptors">
-      <change afterPath="$PROJECT_DIR$/src/app/App.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/auth/api/authApi.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/auth/api/authApi.types.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/auth/model/auth-reducer.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/features/auth/model/authSelectors.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Main.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Main.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/store.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/components/Header/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/components/Header/Header.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/routing/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/routing/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/auth/ui/Login/Login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/auth/ui/Login/Login.tsx" afterDir="false" />
-    </list>
+    <list default="true" id="8a6b8077-0164-4c5c-9391-fe448cb2bad3" name="Changes" comment="improved logout, added application initialization" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -122,7 +109,7 @@
       <workItem from="1739540264794" duration="7152000" />
       <workItem from="1739605065857" duration="6321000" />
       <workItem from="1739622137356" duration="8362000" />
-      <workItem from="1739687493164" duration="7996000" />
+      <workItem from="1739687493164" duration="8737000" />
     </task>
     <task id="LOCAL-00001" summary="test commit">
       <option name="closed" value="true" />
@@ -404,7 +391,15 @@
       <option name="project" value="LOCAL" />
       <updated>1739638140250</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="improved logout, added application initialization">
+      <option name="closed" value="true" />
+      <created>1739697375073</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1739697375073</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -437,7 +432,8 @@
     <MESSAGE value="added components Page404.tsx and Routing.tsx and settings routing" />
     <MESSAGE value="refactor" />
     <MESSAGE value="added interceptors" />
-    <option name="LAST_COMMIT_MESSAGE" value="added interceptors" />
+    <MESSAGE value="improved logout, added application initialization" />
+    <option name="LAST_COMMIT_MESSAGE" value="improved logout, added application initialization" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
