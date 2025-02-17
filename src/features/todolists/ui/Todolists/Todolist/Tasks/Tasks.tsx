@@ -3,9 +3,6 @@ import { useAppSelector } from "common/hooks/useAppSelector"
 import { selectTasks } from "../../../../model/tasksSelectors"
 import { Task } from "./Task/Task"
 import { DomainTodolist } from "../../../../model/todolists-reducer"
-import { useEffect } from "react"
-import { useAppDispatch } from "common/hooks"
-import { fetchTasksThunkTC } from "../../../../model/tasks-reducer"
 import { TaskStatus } from "common/enums"
 
 type Props = {
@@ -14,11 +11,6 @@ type Props = {
 
 export const Tasks = ({ todolist }: Props) => {
   const tasks = useAppSelector(selectTasks)
-  const dispatch = useAppDispatch()
-
-  useEffect(() => {
-    dispatch(fetchTasksThunkTC(todolist.id))
-  }, [])
 
   const allTodolistTasks = tasks[todolist.id]
 

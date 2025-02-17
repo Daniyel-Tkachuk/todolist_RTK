@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8a6b8077-0164-4c5c-9391-fe448cb2bad3" name="Changes" comment="improved logout, added application initialization" />
+    <list default="true" id="8a6b8077-0164-4c5c-9391-fe448cb2bad3" name="Changes" comment="fixed bug - when logging out the state was not cleared.&#10;And refactor code">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/auth/model/auth-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/auth/model/auth-reducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/todolists/model/tasks-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/todolists/model/tasks-reducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/todolists/model/todolists-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/todolists/model/todolists-reducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/todolists/ui/Todolists/Todolist/Tasks/Tasks.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/todolists/ui/Todolists/Todolist/Tasks/Tasks.tsx" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -109,7 +115,9 @@
       <workItem from="1739540264794" duration="7152000" />
       <workItem from="1739605065857" duration="6321000" />
       <workItem from="1739622137356" duration="8362000" />
-      <workItem from="1739687493164" duration="8737000" />
+      <workItem from="1739687493164" duration="9508000" />
+      <workItem from="1739710740457" duration="338000" />
+      <workItem from="1739820686563" duration="1887000" />
     </task>
     <task id="LOCAL-00001" summary="test commit">
       <option name="closed" value="true" />
@@ -399,7 +407,15 @@
       <option name="project" value="LOCAL" />
       <updated>1739697375073</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="refactor">
+      <option name="closed" value="true" />
+      <created>1739701788692</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1739701788692</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -430,10 +446,11 @@
     <MESSAGE value="added functional - when deleting a toollist, tasks are disabled" />
     <MESSAGE value="added react-hook-form and react-router-dom" />
     <MESSAGE value="added components Page404.tsx and Routing.tsx and settings routing" />
-    <MESSAGE value="refactor" />
     <MESSAGE value="added interceptors" />
     <MESSAGE value="improved logout, added application initialization" />
-    <option name="LAST_COMMIT_MESSAGE" value="improved logout, added application initialization" />
+    <MESSAGE value="refactor" />
+    <MESSAGE value="fixed bug - when logging out the state was not cleared.&#10;And refactor code" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed bug - when logging out the state was not cleared.&#10;And refactor code" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
