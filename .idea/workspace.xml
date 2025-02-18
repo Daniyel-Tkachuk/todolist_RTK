@@ -4,24 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8a6b8077-0164-4c5c-9391-fe448cb2bad3" name="Changes" comment="fixed a bug related to the rendering of the component when returning from a PageError to the main page">
-      <change afterPath="$PROJECT_DIR$/src/common/components/Faq/FaqPage.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/common/components/ProtectedRoutes/ProtectedRoutes.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/common/router/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/common/router/path.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/common/router/privateRoutes.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/common/router/publickRoutes.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/common/router/router.tsx" afterDir="false" />
+    <list default="true" id="8a6b8077-0164-4c5c-9391-fe448cb2bad3" name="Changes" comment="refactor">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Main.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Main.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/common/components/Header/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/components/Header/Header.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/components/Page404/Page404.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/components/Page404/Page404.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/components/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/components/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/routing/Routing.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/routing/index.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/auth/ui/Login/Login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/auth/ui/Login/Login.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -133,7 +118,7 @@
       <workItem from="1739820686563" duration="3184000" />
       <workItem from="1739867314474" duration="5318000" />
       <workItem from="1739887690943" duration="8496000" />
-      <workItem from="1739904666307" duration="1226000" />
+      <workItem from="1739904666307" duration="2019000" />
     </task>
     <task id="LOCAL-00001" summary="test commit">
       <option name="closed" value="true" />
@@ -479,7 +464,15 @@
       <option name="project" value="LOCAL" />
       <updated>1739872663420</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="refactor">
+      <option name="closed" value="true" />
+      <created>1739906154275</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1739906154275</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -507,14 +500,14 @@
     <MESSAGE value="added components Page404.tsx and Routing.tsx and settings routing" />
     <MESSAGE value="added interceptors" />
     <MESSAGE value="improved logout, added application initialization" />
-    <MESSAGE value="refactor" />
     <MESSAGE value="fixed bug - when logging out the state was not cleared.&#10;And refactor code" />
     <MESSAGE value="added validation for text field password" />
     <MESSAGE value="added zod" />
     <MESSAGE value="added schema for validation" />
     <MESSAGE value="added link (back main page) in component Page404.tsx" />
     <MESSAGE value="fixed a bug related to the rendering of the component when returning from a PageError to the main page" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed a bug related to the rendering of the component when returning from a PageError to the main page" />
+    <MESSAGE value="refactor" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

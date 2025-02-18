@@ -13,6 +13,7 @@ import { MenuButton } from "common/components"
 import { LinearProgress } from "@mui/material"
 import { logoutTC } from "../../../features/auth/model/auth-reducer"
 import { selectIsLoggedIn } from "../../../features/auth/model/authSelectors"
+import { Link } from "react-router"
 
 export const Header = () => {
   const dispatch = useAppDispatch()
