@@ -15,9 +15,9 @@ import { loginTC } from "../../model/auth-reducer"
 import { selectIsLoggedIn } from "../../model/authSelectors"
 import { useNavigate } from "react-router"
 import { useEffect } from "react"
-import { Path } from "common/routing"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { LoginInputs, schema } from "../../model/schemaValidation"
+import { Path } from "common/router/path"
 
 export const Login = () => {
   const {

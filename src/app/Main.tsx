@@ -1,17 +1,14 @@
 import Container from "@mui/material/Container"
 import Grid from "@mui/material/Unstable_Grid2"
-import React, { useEffect } from "react"
+import React from "react"
 import { AddItemForm } from "common/components"
 import { useAppDispatch, useAppSelector } from "common/hooks"
 import { addTodolistTC } from "../features/todolists/model/todolists-reducer"
 import { Todolists } from "../features/todolists/ui/Todolists/Todolists"
-import { Path } from "common/routing"
 import { selectIsLoggedIn } from "../features/auth/model/authSelectors"
-import { useNavigate } from "react-router"
 
 export const Main = () => {
   const dispatch = useAppDispatch()
-  const navigate = useNavigate()
 
   const isLoggedIn = useAppSelector(selectIsLoggedIn)
 
@@ -19,25 +16,19 @@ export const Main = () => {
     dispatch(addTodolistTC(title))
   }
 
-  useEffect(() => {
-    if (!isLoggedIn) {
-      navigate(Path.Login)
-    }
-  }, [isLoggedIn])
-
-  if (!isLoggedIn) {
-    return null
-  }
-
   return (
     <Container fixed>
-      <Grid container sx={{ mb: "30px" }}>
-        <AddItemForm addItem={addTodolist} />
-      </Grid>
+      {isLoggedIn && (
+        <>
+          <Grid container sx={{ mb: "30px" }}>
+            <AddItemForm addItem={addTodolist} />
+          </Grid>
 
-      <Grid container spacing={4}>
-        <Todolists />
-      </Grid>
+          <Grid container spacing={4}>
+            <Todolists />
+          </Grid>
+        </>
+      )}
     </Container>
   )
 }

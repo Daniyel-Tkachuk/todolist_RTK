@@ -7,10 +7,10 @@ import { useAppDispatch, useAppSelector } from "common/hooks"
 import { getTheme } from "common/theme"
 import { selectThemeMode } from "./appSelectors"
 import { ErrorSnackbar } from "common/components/ErrorSnackbar/ErrorSnackbar"
-import { Routing } from "common/routing"
 import { initializeAppTC } from "../features/auth/model/auth-reducer"
 import { selectIsInitialized } from "../features/auth/model/authSelectors"
 import { CircularProgress } from "@mui/material"
+import { Outlet } from "react-router"
 
 export const App = () => {
   const dispatch = useAppDispatch()
@@ -33,7 +33,7 @@ export const App = () => {
     <ThemeProvider theme={getTheme(themeMode)}>
       <CssBaseline />
       <Header />
-      <Routing />
+      <Outlet />
       <ErrorSnackbar />
     </ThemeProvider>
   )

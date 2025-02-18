@@ -1,7 +1,7 @@
 import s from "./Page404.module.css"
 import Button from "@mui/material/Button"
 import { Link } from "react-router"
-import { Path } from "common/routing"
+import { Path } from "common/router/path"
 
 export const Page404 = () => {
   return (
