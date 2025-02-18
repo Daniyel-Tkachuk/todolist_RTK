@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8a6b8077-0164-4c5c-9391-fe448cb2bad3" name="Changes" comment="added schema for validation">
+    <list default="true" id="8a6b8077-0164-4c5c-9391-fe448cb2bad3" name="Changes" comment="added link (back main page) in component Page404.tsx">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/components/Page404/Page404.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/components/Page404/Page404.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/auth/model/schemaValidation.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/auth/model/schemaValidation.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Main.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Main.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,7 +115,7 @@
       <workItem from="1739687493164" duration="9508000" />
       <workItem from="1739710740457" duration="338000" />
       <workItem from="1739820686563" duration="3184000" />
-      <workItem from="1739867314474" duration="4488000" />
+      <workItem from="1739867314474" duration="5193000" />
     </task>
     <task id="LOCAL-00001" summary="test commit">
       <option name="closed" value="true" />
@@ -446,7 +445,15 @@
       <option name="project" value="LOCAL" />
       <updated>1739870142096</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="added link (back main page) in component Page404.tsx">
+      <option name="closed" value="true" />
+      <created>1739871895363</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1739871895363</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -456,7 +463,6 @@
     <option featureType="com.intellij.fileTypeFactory" implementationName=".env" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="write authSlice.ts" />
     <MESSAGE value="added index for export files" />
     <MESSAGE value="optimization" />
     <MESSAGE value="refactor - AppDispatch for Thunk" />
@@ -481,7 +487,8 @@
     <MESSAGE value="added validation for text field password" />
     <MESSAGE value="added zod" />
     <MESSAGE value="added schema for validation" />
-    <option name="LAST_COMMIT_MESSAGE" value="added schema for validation" />
+    <MESSAGE value="added link (back main page) in component Page404.tsx" />
+    <option name="LAST_COMMIT_MESSAGE" value="added link (back main page) in component Page404.tsx" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

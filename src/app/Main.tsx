@@ -25,6 +25,10 @@ export const Main = () => {
     }
   }, [isLoggedIn])
 
+  if (!isLoggedIn) {
+    return null
+  }
+
   return (
     <Container fixed>
       <Grid container sx={{ mb: "30px" }}>
