@@ -1,7 +1,8 @@
 import { instance } from "common/instance"
 import { BaseResponse } from "common/types"
-import { LoginInputs } from "../ui/Login/Login"
+
 import { UserType } from "./authApi.types"
+import { LoginInputs } from "../model/schemaValidation"
 
 export const authApi = {
   me() {

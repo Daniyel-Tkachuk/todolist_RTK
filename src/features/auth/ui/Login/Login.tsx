@@ -16,13 +16,8 @@ import { selectIsLoggedIn } from "../../model/authSelectors"
 import { useNavigate } from "react-router"
 import { useEffect } from "react"
 import { Path } from "common/routing"
-
-export type LoginInputs = {
-  email: string
-  password: string
-  rememberMe: boolean
-  captcha?: string
-}
+import { zodResolver } from "@hookform/resolvers/zod"
+import { LoginInputs, schema } from "../../model/schemaValidation"
 
 export const Login = () => {
   const {
@@ -32,6 +27,7 @@ export const Login = () => {
     control, // для регистрации компонента, + треб.исп. компонент <Controller/>
     formState: { errors },
   } = useForm<LoginInputs>({
+    resolver: zodResolver(schema),
     defaultValues: { email: "", password: "", rememberMe: false },
   })
 
@@ -78,30 +74,9 @@ export const Login = () => {
           </FormLabel>
           <form onSubmit={handleSubmit(onSubmit)}>
             <FormGroup>
-              <TextField
-                label="Email"
-                margin="normal"
-                {...register("email", {
-                  required: "Email is required",
-                  pattern: {
-                    value: /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/,
-                    message: "Incorrect email address",
-                  },
-                })}
-              />
+              <TextField label="Email" margin="normal" {...register("email")} />
               {errors.email && <span className={s.errorMessage}>{errors.email.message}</span>}
-              <TextField
-                type="password"
-                label="Password"
-                margin="normal"
-                {...register("password", {
-                  required: "Password is required",
-                  minLength: {
-                    value: 4,
-                    message: "Password must be at least 3 characters long",
-                  },
-                })}
-              />
+              <TextField type="password" label="Password" margin="normal" {...register("password")} />
               {errors.password && <span className={s.errorMessage}>{errors.password.message}</span>}
               <FormControlLabel
                 label={"Remember me"}

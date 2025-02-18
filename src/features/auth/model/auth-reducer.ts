@@ -1,6 +1,6 @@
 import { AppDispatch } from "../../../app/store"
 import { setAppStatusAC } from "../../../app/app-reducer"
-import { LoginInputs } from "../ui/Login/Login"
+import { LoginInputs } from "./schemaValidation"
 import { ResultCode } from "common/enums"
 import { handleServerAppError } from "common/utils/handleServerAppError"
 import { handleServerNetworkError } from "common/utils/handleServerNetworkError"
