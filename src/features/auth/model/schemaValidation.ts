@@ -9,5 +9,5 @@ export const schema = z.object({
   ),
   password: z.string().min(4, { message: "Password must be at least 3 characters long" }),
   rememberMe: z.boolean(),
-  captcha: z.string(),
+  captcha: z.string().optional(),
 })
