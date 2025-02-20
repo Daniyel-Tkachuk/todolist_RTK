@@ -11,12 +11,12 @@ import { getTheme } from "common/theme"
 import { selectThemeMode } from "../../../../app/appSelectors"
 import { Controller, SubmitHandler, useForm } from "react-hook-form"
 import s from "./Login.module.css"
-import { loginTC } from "../../model/auth-reducer"
+import { loginTC } from "../../model/authSlice"
 import { selectIsLoggedIn } from "../../model/authSelectors"
 import { useNavigate } from "react-router"
 import { useEffect } from "react"
 import { zodResolver } from "@hookform/resolvers/zod"
-import { LoginInputs, schema } from "../../model/schemaValidation"
+import { LoginInputs, authSchema } from "../../model/authSchemaValid"
 import { Path } from "common/router/path"
 
 export const Login = () => {
@@ -27,7 +27,7 @@ export const Login = () => {
     control, // для регистрации компонента, + треб.исп. компонент <Controller/>
     formState: { errors },
   } = useForm<LoginInputs>({
-    resolver: zodResolver(schema),
+    resolver: zodResolver(authSchema),
     defaultValues: { email: "", password: "", rememberMe: false },
   })
 

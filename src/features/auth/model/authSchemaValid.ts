@@ -1,13 +1,13 @@
 import { z } from "zod"
 
-export type LoginInputs = z.infer<typeof schema>
+export type LoginInputs = z.infer<typeof authSchema>
 
-export const schema = z.object({
+export const authSchema = z.object({
   email: z.preprocess(
     (value) => (typeof value === "string" && value.trim() === "" ? undefined : value),
     z.string({ required_error: "Email is required" }).email({ message: "Invalid email format" }),
   ),
-  password: z.string().min(4, { message: "Password must be at least 3 characters long" }),
+  password: z.string(),
   rememberMe: z.boolean(),
   captcha: z.string().optional(),
 })

@@ -4,9 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8a6b8077-0164-4c5c-9391-fe448cb2bad3" name="Changes" comment="refactor">
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+    <list default="true" id="8a6b8077-0164-4c5c-9391-fe448cb2bad3" name="Changes" comment="added @reduxjs/toolkit">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/app-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app-reducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/store.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/components/Header/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/components/Header/Header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/auth/api/authApi.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/auth/api/authApi.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/auth/model/auth-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/auth/model/authSlice.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/auth/model/schemaValidation.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/auth/model/authSchemaValid.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/auth/ui/Login/Login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/auth/ui/Login/Login.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,7 +127,8 @@
       <workItem from="1739887690943" duration="8496000" />
       <workItem from="1739904666307" duration="2062000" />
       <workItem from="1739983618637" duration="30000" />
-      <workItem from="1739983919157" duration="83000" />
+      <workItem from="1739983919157" duration="1767000" />
+      <workItem from="1740030180216" duration="5537000" />
     </task>
     <task id="LOCAL-00001" summary="test commit">
       <option name="closed" value="true" />
@@ -490,7 +498,15 @@
       <option name="project" value="LOCAL" />
       <updated>1739983930514</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="added @reduxjs/toolkit">
+      <option name="closed" value="true" />
+      <created>1739984026070</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1739984026070</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -500,7 +516,6 @@
     <option featureType="com.intellij.fileTypeFactory" implementationName=".env" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="optimization" />
     <MESSAGE value="refactor - AppDispatch for Thunk" />
     <MESSAGE value="added redux-thunk" />
     <MESSAGE value="change package for test" />
@@ -525,7 +540,8 @@
     <MESSAGE value="added link (back main page) in component Page404.tsx" />
     <MESSAGE value="fixed a bug related to the rendering of the component when returning from a PageError to the main page" />
     <MESSAGE value="refactor" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor" />
+    <MESSAGE value="added @reduxjs/toolkit" />
+    <option name="LAST_COMMIT_MESSAGE" value="added @reduxjs/toolkit" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

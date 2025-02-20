@@ -11,7 +11,7 @@ import { useAppSelector } from "common/hooks"
 import { getTheme } from "common/theme"
 import { MenuButton } from "common/components"
 import { LinearProgress } from "@mui/material"
-import { logoutTC } from "../../../features/auth/model/auth-reducer"
+import { logoutTC } from "../../../features/auth/model/authSlice"
 import { selectIsLoggedIn } from "../../../features/auth/model/authSelectors"
 
 export const Header = () => {
