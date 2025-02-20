@@ -1,5 +1,4 @@
 import { AppDispatch } from "../../../app/store"
-import { setAppStatusAC } from "../../../app/app-reducer"
 import { LoginInputs } from "./authSchemaValid"
 import { ResultCode } from "common/enums"
 import { handleServerAppError } from "common/utils/handleServerAppError"
@@ -7,6 +6,7 @@ import { handleServerNetworkError } from "common/utils/handleServerNetworkError"
 import { authApi } from "../api/authApi"
 import { clearTodolistsDataAC } from "../../todolists/model/todolists-reducer"
 import { createSlice } from "@reduxjs/toolkit"
+import { setAppStatus } from "../../../app/app-reducer"
 
 const authSlice = createSlice({
   name: "auth",
@@ -30,13 +30,13 @@ export const { setIsLoggedIn, setIsInitialized } = authSlice.actions
 // thunks
 
 export const initializeAppTC = () => (dispatch: AppDispatch) => {
-  dispatch(setAppStatusAC("loading"))
+  dispatch(setAppStatus({ status: "loading" }))
   authApi
     .me()
     .then((res) => {
       if (res.data.resultCode === ResultCode.Success) {
         dispatch(setIsLoggedIn({ isLoggedIn: true }))
-        dispatch(setAppStatusAC("succeeded"))
+        dispatch(setAppStatus({ status: "succeeded" }))
       } else {
         handleServerAppError(res.data, dispatch)
       }
@@ -50,13 +50,13 @@ export const initializeAppTC = () => (dispatch: AppDispatch) => {
 }
 
 export const loginTC = (data: LoginInputs) => (dispatch: AppDispatch) => {
-  dispatch(setAppStatusAC("loading"))
+  dispatch(setAppStatus({ status: "loading" }))
   authApi
     .login(data)
     .then((res) => {
       if (res.data.resultCode === ResultCode.Success) {
         dispatch(setIsLoggedIn({ isLoggedIn: true }))
-        dispatch(setAppStatusAC("succeeded"))
+        dispatch(setAppStatus({ status: "succeeded" }))
         localStorage.setItem("sn-token", res.data.data.token)
       } else {
         handleServerAppError(res.data, dispatch)
@@ -68,13 +68,13 @@ export const loginTC = (data: LoginInputs) => (dispatch: AppDispatch) => {
 }
 
 export const logoutTC = () => (dispatch: AppDispatch) => {
-  dispatch(setAppStatusAC("loading"))
+  dispatch(setAppStatus({ status: "loading" }))
   authApi
     .logout()
     .then((res) => {
       if (res.data.resultCode === ResultCode.Success) {
         dispatch(setIsLoggedIn({ isLoggedIn: false }))
-        dispatch(setAppStatusAC("succeeded"))
+        dispatch(setAppStatus({ status: "succeeded" }))
         dispatch(clearTodolistsDataAC())
         localStorage.removeItem("sn-token")
       } else {

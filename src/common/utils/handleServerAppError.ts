@@ -1,8 +1,12 @@
-import { setAppErrorAC, setAppStatusAC } from "../../app/app-reducer"
+import { setAppError, setAppStatus } from "../../app/app-reducer"
 import { AppDispatch } from "../../app/store"
 import { BaseResponse } from "common/types"
 
 export const handleServerAppError = <T>(data: BaseResponse<T>, dispatch: AppDispatch) => {
-  dispatch(setAppErrorAC(data.messages.length ? data.messages[0] : "Some error occurred"))
-  dispatch(setAppStatusAC("failed"))
+  if (data.messages.length) {
+    dispatch(setAppError({ error: data.messages[0] }))
+  } else {
+    dispatch(setAppError({ error: "Some error occurred" }))
+  }
+  dispatch(setAppStatus({ status: "failed" }))
 }

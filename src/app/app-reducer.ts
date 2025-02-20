@@ -14,14 +14,14 @@ const appSlice = createSlice({
     changeTheme: creators.reducer<{ themeMode: ThemeMode }>((state, action) => {
       state.themeMode = action.payload.themeMode
     }),
-    setStatus: creators.reducer<{ status: RequestStatus }>((state, action) => {
+    setAppStatus: creators.reducer<{ status: RequestStatus }>((state, action) => {
       state.status = action.payload.status
     }),
-    setError: creators.reducer<{ error: null | string }>((state, action) => {
+    setAppError: creators.reducer<{ error: null | string }>((state, action) => {
       state.error = action.payload.error
     }),
   }),
 })
 
 export const appReducer = appSlice.reducer
-export const { changeTheme, setStatus, setError } = appSlice.actions
+export const { changeTheme, setAppStatus, setAppError } = appSlice.actions
