@@ -2,7 +2,7 @@ import List from "@mui/material/List"
 import { useAppSelector } from "common/hooks/useAppSelector"
 import { selectTasks } from "../../../../model/tasksSelectors"
 import { Task } from "./Task/Task"
-import { DomainTodolist } from "../../../../model/todolists-reducer"
+import { DomainTodolist } from "../../../../model/todolistsSlice"
 import { TaskStatus } from "common/enums"
 
 type Props = {

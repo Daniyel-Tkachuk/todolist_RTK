@@ -4,7 +4,7 @@ import React, { useEffect } from "react"
 import { useAppDispatch, useAppSelector } from "common/hooks"
 import { selectTodolists } from "../../model/todolistsSelectors"
 import { Todolist } from "./Todolist/Todolist"
-import { fetchTodolistsThunk } from "../../model/todolists-reducer"
+import { fetchTodolistsThunk } from "../../model/todolistsSlice"
 
 export const Todolists = () => {
   const todolists = useAppSelector(selectTodolists)

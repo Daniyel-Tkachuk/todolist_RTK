@@ -6,7 +6,7 @@ import {
   tasksReducer,
   TasksStateType,
 } from "../tasks-reducer"
-import { addTodolistAC, removeTodolistAC } from "../todolists-reducer"
+import { addTodolistAC, removeTodolistAC } from "../todolistsSlice"
 
 let startState: TasksStateType
 

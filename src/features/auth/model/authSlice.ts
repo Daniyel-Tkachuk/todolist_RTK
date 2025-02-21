@@ -4,7 +4,7 @@ import { ResultCode } from "common/enums"
 import { handleServerAppError } from "common/utils/handleServerAppError"
 import { handleServerNetworkError } from "common/utils/handleServerNetworkError"
 import { authApi } from "../api/authApi"
-import { clearTodolistsData } from "../../todolists/model/todolists-reducer"
+import { clearTodolistsData } from "../../todolists/model/todolistsSlice"
 import { createSlice } from "@reduxjs/toolkit"
 import { setAppStatus } from "../../../app/appSlice"
 

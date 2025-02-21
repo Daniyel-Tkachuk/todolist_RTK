@@ -3,7 +3,7 @@ import Grid from "@mui/material/Unstable_Grid2"
 import React from "react"
 import { AddItemForm } from "common/components"
 import { useAppDispatch, useAppSelector } from "common/hooks"
-import { addTodolistTC } from "../features/todolists/model/todolists-reducer"
+import { addTodolistTC } from "../features/todolists/model/todolistsSlice"
 import { Todolists } from "../features/todolists/ui/Todolists/Todolists"
 import { selectIsLoggedIn } from "../features/auth/model/authSelectors"
 
