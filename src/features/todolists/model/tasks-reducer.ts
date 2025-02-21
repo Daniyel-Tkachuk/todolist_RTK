@@ -5,94 +5,50 @@ import { setAppError, setAppStatus } from "../../../app/appSlice"
 import { ResultCode } from "common/enums"
 import { handleServerNetworkError } from "common/utils/handleServerNetworkError"
 import { handleServerAppError } from "common/utils/handleServerAppError"
+import { createSlice } from "@reduxjs/toolkit"
+import { addTodolist, clearTodolistsData, removeTodolist } from "./todolistsSlice"
 
 export type TasksStateType = Record<string, DomainTask[]>
 
-const initialState: TasksStateType = {}
+const tasksSlice = createSlice({
+  name: "tasks",
+  initialState: {} as TasksStateType,
+  reducers: (create) => ({
+    setTasks: create.reducer<{ todolistId: string; tasks: DomainTask[] }>((state, action) => {
+      state[action.payload.todolistId] = action.payload.tasks
+    }),
+    removeTask: create.reducer<{ todolistId: string; taskId: string }>((state, action) => {
+      const tasks = state[action.payload.todolistId]
+      const index = tasks.findIndex((t) => t.id === action.payload.taskId)
+      if (index !== -1) tasks.splice(index, 1)
+    }),
+    addTask: create.reducer<{ task: DomainTask }>((state, action) => {
+      const tasks = state[action.payload.task.todoListId]
+      tasks.unshift(action.payload.task)
+    }),
+    updateTask: create.reducer<{ task: DomainTask }>((state, action) => {
+      const { todoListId, id } = action.payload.task
+      const tasks = state[todoListId]
+      const index = tasks.findIndex((t) => t.id === id)
+      if (index !== -1) tasks[index] = action.payload.task
+    }),
+  }),
+  extraReducers: (builder) => {
+    builder
+      .addCase(addTodolist, (state, action) => {
+        state[action.payload.todolist.id] = []
+      })
+      .addCase(removeTodolist, (state, action) => {
+        delete state[action.payload.id]
+      })
+      .addCase(clearTodolistsData, () => {
+        return {}
+      })
+  },
+})
 
-export const tasksReducer = (state: TasksStateType = initialState, action: ActionsType): TasksStateType => {
-  switch (action.type) {
-    case "SET_TASKS": {
-      const { todolistId, tasks } = action.payload
-      return { ...state, [todolistId]: tasks }
-    }
-    case "REMOVE-TASK": {
-      return {
-        ...state,
-        [action.payload.todolistId]: state[action.payload.todolistId].filter((t) => t.id !== action.payload.taskId),
-      }
-    }
-
-    case "ADD-TASK": {
-      debugger
-      const newTask = action.payload.task
-
-      return { ...state, [newTask.todoListId]: [newTask, ...state[newTask.todoListId]] }
-    }
-
-    case "UPDATE_TASK": {
-      const task = action.payload.task
-      return {
-        ...state,
-        [task.todoListId]: state[task.todoListId].map((t) => (t.id === task.id ? task : t)),
-      }
-    }
-
-    case "ADD-TODOLIST":
-      debugger
-      return { ...state, [action.payload.todolist.id]: [] }
-
-    case "REMOVE-TODOLIST": {
-      let copyState = { ...state }
-      delete copyState[action.payload.id]
-      return copyState
-    }
-    case "CLEAR-TODOLISTS-DATA": {
-      return {}
-    }
-    default:
-      return state
-  }
-}
-
-// Action creators
-export const removeTaskAC = (payload: { taskId: string; todolistId: string }) => {
-  return {
-    type: "REMOVE-TASK",
-    payload,
-  } as const
-}
-
-export const addTaskAC = (payload: { task: DomainTask }) => {
-  return {
-    type: "ADD-TASK",
-    payload,
-  } as const
-}
-
-export const changeTaskStatusAC = (payload: { taskId: string; isDone: boolean; todolistId: string }) => {
-  return {
-    type: "CHANGE_TASK_STATUS",
-    payload,
-  } as const
-}
-
-export const changeTaskTitleAC = (payload: { taskId: string; title: string; todolistId: string }) => {
-  return {
-    type: "CHANGE_TASK_TITLE",
-    payload,
-  } as const
-}
-
-export const setTasksAC = (payload: { todolistId: string; tasks: DomainTask[] }) => {
-  return { type: "SET_TASKS", payload } as const
-}
-
-export const updateTaskAC = (payload: { task: DomainTask }) =>
-  ({
-    type: "UPDATE_TASK",
-    payload,
-  }) as const
+export const tasksReducer = tasksSlice.reducer
+export const { addTask, removeTask, updateTask, setTasks } = tasksSlice.actions
 
 // ------- THUNKS -------------
 
@@ -102,7 +58,7 @@ export const fetchTasksThunkTC = (todolistId: string) => (dispatch: AppDispatch)
     .getTasks(todolistId)
     .then((res) => {
       if (!res.data.error) {
-        dispatch(setTasksAC({ todolistId, tasks: res.data.items }))
+        dispatch(setTasks({ todolistId, tasks: res.data.items }))
         dispatch(setAppStatus({ status: "succeeded" }))
       } else {
         dispatch(setAppError({ error: res.data.error }))
@@ -120,7 +76,7 @@ export const removeTaskTC = (args: { todolistId: string; taskId: string }) => (d
     .deleteTask(args)
     .then((res) => {
       if (res.data.resultCode === ResultCode.Success) {
-        dispatch(removeTaskAC(args))
+        dispatch(removeTask(args))
         dispatch(setAppStatus({ status: "succeeded" }))
       } else {
         handleServerAppError(res.data, dispatch)
@@ -137,7 +93,7 @@ export const addTaskTC = (args: { todolistId: string; title: string }) => (dispa
     .createTask(args)
     .then((res) => {
       if (res.data.resultCode === ResultCode.Success) {
-        dispatch(addTaskAC({ task: res.data.data.item }))
+        dispatch(addTask({ task: res.data.data.item }))
         dispatch(setAppStatus({ status: "succeeded" }))
       } else {
         handleServerAppError(res.data, dispatch)
@@ -173,7 +129,7 @@ export const updateTaskTC =
       .then((res) => {
         if (res.data.resultCode === ResultCode.Success) {
           const task = res.data.data.item
-          dispatch(updateTaskAC({ task }))
+          dispatch(updateTask({ task }))
           dispatch(setAppStatus({ status: "succeeded" }))
         } else {
           handleServerAppError(res.data, dispatch)
@@ -183,20 +139,3 @@ export const updateTaskTC =
         handleServerNetworkError(err, dispatch)
       })
   }
-
-// Actions types
-export type RemoveTaskActionType = ReturnType<typeof removeTaskAC>
-export type AddTaskActionType = ReturnType<typeof addTaskAC>
-export type ChangeTaskStatusActionType = ReturnType<typeof changeTaskStatusAC>
-export type ChangeTaskTitleActionType = ReturnType<typeof changeTaskTitleAC>
-export type SetTasksAT = ReturnType<typeof setTasksAC>
-export type UpdateTaskAT = ReturnType<typeof updateTaskAC>
-
-type ActionsType =
-  | RemoveTaskActionType
-  | AddTaskActionType
-  | ChangeTaskStatusActionType
-  | ChangeTaskTitleActionType
-  | SetTasksAT
-  | UpdateTaskAT
-  | any
