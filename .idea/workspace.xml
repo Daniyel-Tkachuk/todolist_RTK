@@ -4,16 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8a6b8077-0164-4c5c-9391-fe448cb2bad3" name="Changes" comment="rewritten authReducer and appReducer to RTK 2.0 syntax">
+    <list default="true" id="8a6b8077-0164-4c5c-9391-fe448cb2bad3" name="Changes" comment="refactor">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/app-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app-reducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/app-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/appSlice.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/store.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/common/components/ErrorSnackbar/ErrorSnackbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/components/ErrorSnackbar/ErrorSnackbar.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/common/components/Header/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/components/Header/Header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/theme/theme.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/theme/theme.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/common/utils/handleServerAppError.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/utils/handleServerAppError.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/common/utils/handleServerNetworkError.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/utils/handleServerNetworkError.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/features/auth/model/authSlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/auth/model/authSlice.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/features/todolists/model/tasks-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/todolists/model/tasks-reducer.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/features/todolists/model/todolists-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/todolists/model/todolists-reducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/todolists/ui/Todolists/Todolist/FilterTasksButtons/FilterTasksButtons.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/todolists/ui/Todolists/Todolist/FilterTasksButtons/FilterTasksButtons.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,7 +48,7 @@
   }
 }</component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
@@ -55,39 +58,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Node.js.training.ts.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;F:/WEB/todolist-RTK&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;F:\\WEB\\todolist-RTK\\node_modules\\prettier&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;settings.javascript.prettier&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;F:\\WEB\\todolist-RTK\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Node.js.todolists-reducer.ts.executor": "Run",
+    "Node.js.training.ts.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "F:/WEB/todolist-RTK",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "prettierjs.PrettierConfiguration.Package": "F:\\WEB\\todolist-RTK\\node_modules\\prettier",
+    "settings.editor.selected.configurable": "settings.javascript.prettier",
+    "ts.external.directory.path": "F:\\WEB\\todolist-RTK\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="F:\WEB\todolist-RTK\src\common\components\ProtectedRoutes" />
       <recent name="F:\WEB\todolist-RTK\src\features\auth\api" />
     </key>
-  </component>
-  <component name="RunManager">
-    <configuration name="training.ts" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/src/training.ts" typescript-loader="bundled" working-dir="$PROJECT_DIR$/src">
-      <method v="2" />
-    </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Node.js.training.ts" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -128,7 +122,8 @@
       <workItem from="1739904666307" duration="2062000" />
       <workItem from="1739983618637" duration="30000" />
       <workItem from="1739983919157" duration="1767000" />
-      <workItem from="1740030180216" duration="6409000" />
+      <workItem from="1740030180216" duration="8031000" />
+      <workItem from="1740124708550" duration="5594000" />
     </task>
     <task id="LOCAL-00001" summary="test commit">
       <option name="closed" value="true" />
@@ -514,7 +509,15 @@
       <option name="project" value="LOCAL" />
       <updated>1740069306591</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="refactor">
+      <option name="closed" value="true" />
+      <created>1740070163233</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1740070163233</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -546,10 +549,10 @@
     <MESSAGE value="added schema for validation" />
     <MESSAGE value="added link (back main page) in component Page404.tsx" />
     <MESSAGE value="fixed a bug related to the rendering of the component when returning from a PageError to the main page" />
-    <MESSAGE value="refactor" />
     <MESSAGE value="added @reduxjs/toolkit" />
     <MESSAGE value="rewritten authReducer and appReducer to RTK 2.0 syntax" />
-    <option name="LAST_COMMIT_MESSAGE" value="rewritten authReducer and appReducer to RTK 2.0 syntax" />
+    <MESSAGE value="refactor" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

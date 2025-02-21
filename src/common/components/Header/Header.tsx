@@ -12,7 +12,7 @@ import { MenuButton } from "common/components"
 import { LinearProgress } from "@mui/material"
 import { logoutTC } from "../../../features/auth/model/authSlice"
 import { selectIsLoggedIn } from "../../../features/auth/model/authSelectors"
-import { changeTheme } from "../../../app/app-reducer"
+import { changeTheme } from "../../../app/appSlice"
 
 export const Header = () => {
   const dispatch = useAppDispatch()

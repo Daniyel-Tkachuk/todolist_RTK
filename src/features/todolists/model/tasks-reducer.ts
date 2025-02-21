@@ -1,8 +1,7 @@
-import { AddTodolistActionType, ClearTodolistsDataAT, RemoveTodolistActionType } from "./todolists-reducer"
 import { AppDispatch, RootState } from "../../../app/store"
 import { tasksApi } from "../api/tasksApi"
 import { DomainTask, UpdateTaskDomainModel, UpdateTaskModel } from "../api/tasksApi.types"
-import { setAppError, setAppStatus } from "../../../app/app-reducer"
+import { setAppError, setAppStatus } from "../../../app/appSlice"
 import { ResultCode } from "common/enums"
 import { handleServerNetworkError } from "common/utils/handleServerNetworkError"
 import { handleServerAppError } from "common/utils/handleServerAppError"
@@ -25,6 +24,7 @@ export const tasksReducer = (state: TasksStateType = initialState, action: Actio
     }
 
     case "ADD-TASK": {
+      debugger
       const newTask = action.payload.task
 
       return { ...state, [newTask.todoListId]: [newTask, ...state[newTask.todoListId]] }
@@ -39,6 +39,7 @@ export const tasksReducer = (state: TasksStateType = initialState, action: Actio
     }
 
     case "ADD-TODOLIST":
+      debugger
       return { ...state, [action.payload.todolist.id]: [] }
 
     case "REMOVE-TODOLIST": {
@@ -196,8 +197,6 @@ type ActionsType =
   | AddTaskActionType
   | ChangeTaskStatusActionType
   | ChangeTaskTitleActionType
-  | AddTodolistActionType
-  | RemoveTodolistActionType
   | SetTasksAT
   | UpdateTaskAT
-  | ClearTodolistsDataAT
+  | any
