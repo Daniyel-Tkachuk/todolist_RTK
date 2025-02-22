@@ -5,7 +5,7 @@ import { RequestStatus, setAppStatus } from "../../../app/appSlice"
 import { ResultCode } from "common/enums"
 import { handleServerNetworkError } from "common/utils/handleServerNetworkError"
 import { handleServerAppError } from "common/utils/handleServerAppError"
-import { fetchTasksThunkTC } from "./tasks-reducer"
+import { fetchTasksThunkTC } from "./tasksSlice"
 import { createSlice } from "@reduxjs/toolkit"
 
 export type FilterValuesType = "all" | "active" | "completed"

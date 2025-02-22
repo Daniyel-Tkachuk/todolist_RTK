@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux"
-import { selectIsLoggedIn } from "../../../features/auth/model/authSelectors"
 import { Navigate, Outlet } from "react-router"
 import { Path } from "common/router/path"
+import { selectIsLoggedIn } from "../../../features/auth/model/authSlice"
 
 export const ProtectedRoutes = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn)

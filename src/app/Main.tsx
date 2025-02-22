@@ -5,7 +5,7 @@ import { AddItemForm } from "common/components"
 import { useAppDispatch, useAppSelector } from "common/hooks"
 import { addTodolistTC } from "../features/todolists/model/todolistsSlice"
 import { Todolists } from "../features/todolists/ui/Todolists/Todolists"
-import { selectIsLoggedIn } from "../features/auth/model/authSelectors"
+import { selectIsLoggedIn } from "../features/auth/model/authSlice"
 
 export const Main = () => {
   const dispatch = useAppDispatch()
