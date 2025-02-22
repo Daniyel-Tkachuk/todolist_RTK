@@ -1,9 +1,9 @@
 import List from "@mui/material/List"
 import { useAppSelector } from "common/hooks/useAppSelector"
-import { selectTasks } from "../../../../model/tasksSelectors"
 import { Task } from "./Task/Task"
 import { DomainTodolist } from "../../../../model/todolistsSlice"
 import { TaskStatus } from "common/enums"
+import { selectTasks } from "../../../../model/tasksSlice"
 
 type Props = {
   todolist: DomainTodolist
@@ -12,17 +12,21 @@ type Props = {
 export const Tasks = ({ todolist }: Props) => {
   const tasks = useAppSelector(selectTasks)
 
-  const allTodolistTasks = tasks[todolist.id]
+  const allTodolistTasks = tasks[todolist.id] || []
 
-  let tasksForTodolist = allTodolistTasks
-
-  if (todolist.filter === "active") {
-    tasksForTodolist = allTodolistTasks.filter((task) => task.status === TaskStatus.New)
-  }
-
-  if (todolist.filter === "completed") {
-    tasksForTodolist = allTodolistTasks.filter((task) => task.status === TaskStatus.Completed)
-  }
+  const tasksForTodolist = (() => {
+    switch (todolist.filter) {
+      case "active": {
+        return allTodolistTasks.filter((t) => t.status === TaskStatus.New)
+      }
+      case "completed": {
+        return allTodolistTasks.filter((t) => t.status === TaskStatus.Completed)
+      }
+      default: {
+        return allTodolistTasks
+      }
+    }
+  })()
 
   return (
     <>

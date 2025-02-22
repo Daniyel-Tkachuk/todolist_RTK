@@ -4,13 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8a6b8077-0164-4c5c-9391-fe448cb2bad3" name="Changes" comment="refactor store.ts">
+    <list default="true" id="8a6b8077-0164-4c5c-9391-fe448cb2bad3" name="Changes" comment="refactor selectors">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/appSlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/appSlice.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/store.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/auth/model/authSlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/auth/model/authSlice.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/todolists/model/tasksSelectors.ts" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/features/todolists/model/tasksSlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/todolists/model/tasksSlice.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/todolists/model/todolistsSelectors.ts" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/features/todolists/model/todolistsSlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/todolists/model/todolistsSlice.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/todolists/ui/Todolists/Todolist/Tasks/Tasks.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/todolists/ui/Todolists/Todolist/Tasks/Tasks.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/todolists/ui/Todolists/Todolists.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/todolists/ui/Todolists/Todolists.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +43,7 @@
   }
 }</component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
+    <option name="selectedTabId" value="ProjectErrors" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
@@ -119,15 +120,7 @@
       <workItem from="1740030180216" duration="8031000" />
       <workItem from="1740124708550" duration="5594000" />
       <workItem from="1740150955664" duration="6031000" />
-      <workItem from="1740221766871" duration="2652000" />
-    </task>
-    <task id="LOCAL-00007" summary="refactor">
-      <option name="closed" value="true" />
-      <created>1739106899302</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1739106899302</updated>
+      <workItem from="1740221766871" duration="4270000" />
     </task>
     <task id="LOCAL-00008" summary="refactor">
       <option name="closed" value="true" />
@@ -513,7 +506,15 @@
       <option name="project" value="LOCAL" />
       <updated>1740223921428</updated>
     </task>
-    <option name="localTasksCounter" value="56" />
+    <task id="LOCAL-00056" summary="refactor selectors">
+      <option name="closed" value="true" />
+      <created>1740224612592</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1740224612592</updated>
+    </task>
+    <option name="localTasksCounter" value="57" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -546,9 +547,9 @@
     <MESSAGE value="refactor" />
     <MESSAGE value="rewritten to RTK 2.0 syntax" />
     <MESSAGE value="refactor code" />
-    <MESSAGE value="refactor selectors" />
     <MESSAGE value="refactor store.ts" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor store.ts" />
+    <MESSAGE value="refactor selectors" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor selectors" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
