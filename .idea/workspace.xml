@@ -6,12 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="8a6b8077-0164-4c5c-9391-fe448cb2bad3" name="Changes" comment="refactor selectors">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/todolists/model/tasksSelectors.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/todolists/model/tasksSlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/todolists/model/tasksSlice.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/todolists/model/todolistsSelectors.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/todolists/model/todolistsSlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/todolists/model/todolistsSlice.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/todolists/ui/Todolists/Todolist/Tasks/Tasks.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/todolists/ui/Todolists/Todolist/Tasks/Tasks.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/todolists/ui/Todolists/Todolists.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/todolists/ui/Todolists/Todolists.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/todolists/model/__tests__/todolists-reducer.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/todolists/model/__tests__/todolists-reducer.test.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/todolists/model/__tests__/todolists-tasks-reducer.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/todolists/model/__tests__/todolists-tasks-reducer.test.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,30 +50,93 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Node.js.todolists-reducer.ts.executor&quot;: &quot;Run&quot;,
-    &quot;Node.js.training.ts.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;F:/WEB/todolist-RTK&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;F:\\WEB\\todolist-RTK\\node_modules\\prettier&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;settings.javascript.prettier&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;F:\\WEB\\todolist-RTK\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Jest.correct filter of todolist should be changed.executor": "Run",
+    "Jest.correct todolist should be added.executor": "Run",
+    "Jest.correct todolist should be removed.executor": "Run",
+    "Jest.correct todolist should change its name.executor": "Run",
+    "Node.js.todolists-reducer.ts.executor": "Run",
+    "Node.js.training.ts.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "F:/WEB/todolist-RTK",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs.jest.jest_package": "F:/WEB/todolist-RTK/node_modules/react-scripts",
+    "nodejs_package_manager_path": "npm",
+    "prettierjs.PrettierConfiguration.Package": "F:\\WEB\\todolist-RTK\\node_modules\\prettier",
+    "settings.editor.selected.configurable": "settings.javascript.prettier",
+    "ts.external.directory.path": "F:\\WEB\\todolist-RTK\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="F:\WEB\todolist-RTK\src\common\components\ProtectedRoutes" />
       <recent name="F:\WEB\todolist-RTK\src\features\auth\api" />
     </key>
+  </component>
+  <component name="RunManager" selected="Jest.correct filter of todolist should be changed">
+    <configuration name="correct filter of todolist should be changed" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/src/features/todolists/model/__tests__/todolists-reducer.test.ts" />
+      <test-names>
+        <test-name value="correct filter of todolist should be changed" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="correct todolist should be added" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/src/features/todolists/model/__tests__/todolists-reducer.test.ts" />
+      <test-names>
+        <test-name value="correct todolist should be added" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="correct todolist should be removed" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/src/features/todolists/model/__tests__/todolists-reducer.test.ts" />
+      <test-names>
+        <test-name value="correct todolist should be removed" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="correct todolist should change its name" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/src/features/todolists/model/__tests__/todolists-reducer.test.ts" />
+      <test-names>
+        <test-name value="correct todolist should change its name" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Jest.correct filter of todolist should be changed" />
+        <item itemvalue="Jest.correct todolist should change its name" />
+        <item itemvalue="Jest.correct todolist should be added" />
+        <item itemvalue="Jest.correct todolist should be removed" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -120,15 +180,8 @@
       <workItem from="1740030180216" duration="8031000" />
       <workItem from="1740124708550" duration="5594000" />
       <workItem from="1740150955664" duration="6031000" />
-      <workItem from="1740221766871" duration="4270000" />
-    </task>
-    <task id="LOCAL-00008" summary="refactor">
-      <option name="closed" value="true" />
-      <created>1739106931315</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1739106931315</updated>
+      <workItem from="1740221766871" duration="4940000" />
+      <workItem from="1740235966027" duration="455000" />
     </task>
     <task id="LOCAL-00009" summary="refactor">
       <option name="closed" value="true" />
@@ -514,7 +567,15 @@
       <option name="project" value="LOCAL" />
       <updated>1740224612592</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="refactor selectors">
+      <option name="closed" value="true" />
+      <created>1740226124041</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1740226124041</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
