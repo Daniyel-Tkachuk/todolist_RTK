@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit"
 export type ThemeMode = "dark" | "light"
 export type RequestStatus = "idle" | "loading" | "succeeded" | "failed"
 
-const appSlice = createSlice({
+export const appSlice = createSlice({
   name: "app",
   initialState: {
     status: "idle" as RequestStatus,
@@ -21,7 +21,13 @@ const appSlice = createSlice({
       state.error = action.payload.error
     }),
   }),
+  selectors: {
+    selectThemeMode: (state) => state.themeMode,
+    selectStatus: (state) => state.status,
+    selectAppError: (state) => state.error,
+  },
 })
 
 export const appReducer = appSlice.reducer
 export const { changeTheme, setAppStatus, setAppError } = appSlice.actions
+export const { selectThemeMode, selectStatus, selectAppError } = appSlice.selectors

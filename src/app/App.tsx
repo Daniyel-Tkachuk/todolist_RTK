@@ -5,11 +5,11 @@ import React, { useEffect } from "react"
 import { Header } from "common/components"
 import { useAppDispatch, useAppSelector } from "common/hooks"
 import { getTheme } from "common/theme"
-import { selectThemeMode } from "./appSelectors"
 import { ErrorSnackbar } from "common/components/ErrorSnackbar/ErrorSnackbar"
 import { initializeAppTC, selectIsInitialized } from "../features/auth/model/authSlice"
 import { CircularProgress } from "@mui/material"
 import { Outlet } from "react-router"
+import { selectThemeMode } from "./appSlice"
 
 export const App = () => {
   const dispatch = useAppDispatch()

@@ -8,7 +8,6 @@ import Grid from "@mui/material/Grid"
 import TextField from "@mui/material/TextField"
 import { useAppDispatch, useAppSelector } from "common/hooks"
 import { getTheme } from "common/theme"
-import { selectThemeMode } from "../../../../app/appSelectors"
 import { Controller, SubmitHandler, useForm } from "react-hook-form"
 import s from "./Login.module.css"
 import { loginTC, selectIsLoggedIn } from "../../model/authSlice"
@@ -17,6 +16,7 @@ import { useEffect } from "react"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { LoginInputs, authSchema } from "../../model/authSchemaValid"
 import { Path } from "common/router/path"
+import { selectThemeMode } from "../../../../app/appSlice"
 
 export const Login = () => {
   const {

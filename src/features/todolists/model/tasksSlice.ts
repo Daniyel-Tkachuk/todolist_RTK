@@ -10,7 +10,7 @@ import { addTodolist, clearTodolistsData, removeTodolist } from "./todolistsSlic
 
 export type TasksStateType = Record<string, DomainTask[]>
 
-const tasksSlice = createSlice({
+export const tasksSlice = createSlice({
   name: "tasks",
   initialState: {} as TasksStateType,
   reducers: (create) => ({

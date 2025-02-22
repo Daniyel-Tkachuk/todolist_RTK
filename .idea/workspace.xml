@@ -4,9 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8a6b8077-0164-4c5c-9391-fe448cb2bad3" name="Changes" comment="refactor selectors">
+    <list default="true" id="8a6b8077-0164-4c5c-9391-fe448cb2bad3" name="Changes" comment="refactor store.ts">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/appSlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/appSlice.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/store.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/auth/model/authSlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/auth/model/authSlice.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/todolists/model/tasksSlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/todolists/model/tasksSlice.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/todolists/model/todolistsSlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/todolists/model/todolistsSlice.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,15 +119,7 @@
       <workItem from="1740030180216" duration="8031000" />
       <workItem from="1740124708550" duration="5594000" />
       <workItem from="1740150955664" duration="6031000" />
-      <workItem from="1740221766871" duration="2120000" />
-    </task>
-    <task id="LOCAL-00006" summary="refactor">
-      <option name="closed" value="true" />
-      <created>1737053584964</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1737053584964</updated>
+      <workItem from="1740221766871" duration="2652000" />
     </task>
     <task id="LOCAL-00007" summary="refactor">
       <option name="closed" value="true" />
@@ -509,7 +505,15 @@
       <option name="project" value="LOCAL" />
       <updated>1740223784400</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="refactor store.ts">
+      <option name="closed" value="true" />
+      <created>1740223921428</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1740223921428</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -519,7 +523,6 @@
     <option featureType="com.intellij.fileTypeFactory" implementationName=".env" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="remove file" />
     <MESSAGE value="added LinerPreloader" />
     <MESSAGE value="added ErrorSnackbar" />
     <MESSAGE value="added implement button disable during item deletion request" />
@@ -544,7 +547,8 @@
     <MESSAGE value="rewritten to RTK 2.0 syntax" />
     <MESSAGE value="refactor code" />
     <MESSAGE value="refactor selectors" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor selectors" />
+    <MESSAGE value="refactor store.ts" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor store.ts" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

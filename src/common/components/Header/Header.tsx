@@ -4,14 +4,13 @@ import IconButton from "@mui/material/IconButton"
 import Switch from "@mui/material/Switch"
 import Toolbar from "@mui/material/Toolbar"
 import React from "react"
-import { selectStatus, selectThemeMode } from "../../../app/appSelectors"
 import { useAppDispatch } from "common/hooks"
 import { useAppSelector } from "common/hooks"
 import { getTheme } from "common/theme"
 import { MenuButton } from "common/components"
 import { LinearProgress } from "@mui/material"
 import { logoutTC, selectIsLoggedIn } from "../../../features/auth/model/authSlice"
-import { changeTheme } from "../../../app/appSlice"
+import { changeTheme, selectStatus, selectThemeMode } from "../../../app/appSlice"
 
 export const Header = () => {
   const dispatch = useAppDispatch()

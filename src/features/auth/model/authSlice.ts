@@ -8,7 +8,7 @@ import { clearTodolistsData } from "../../todolists/model/todolistsSlice"
 import { createSlice } from "@reduxjs/toolkit"
 import { setAppStatus } from "../../../app/appSlice"
 
-const authSlice = createSlice({
+export const authSlice = createSlice({
   name: "auth",
   initialState: {
     isLoggedIn: false,
