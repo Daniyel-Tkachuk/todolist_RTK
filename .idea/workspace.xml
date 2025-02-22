@@ -4,17 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8a6b8077-0164-4c5c-9391-fe448cb2bad3" name="Changes" comment="refactor code">
+    <list default="true" id="8a6b8077-0164-4c5c-9391-fe448cb2bad3" name="Changes" comment="refactor selectors">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/store.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/auth/model/authSelectors.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/auth/model/authSlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/auth/model/authSlice.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/todolists/model/__tests__/tasks-reducer.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/todolists/model/__tests__/tasks-reducer.test.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/todolists/model/__tests__/todolists-tasks-reducer.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/todolists/model/__tests__/todolists-tasks-reducer.test.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/todolists/model/tasks-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/todolists/model/tasksSlice.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/todolists/model/todolistsSlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/todolists/model/todolistsSlice.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/todolists/ui/Todolists/Todolist/Tasks/Task/Task.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/todolists/ui/Todolists/Todolist/Tasks/Task/Task.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/todolists/ui/Todolists/Todolist/Todolist.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/todolists/ui/Todolists/Todolist/Todolist.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,15 +115,7 @@
       <workItem from="1740030180216" duration="8031000" />
       <workItem from="1740124708550" duration="5594000" />
       <workItem from="1740150955664" duration="6031000" />
-      <workItem from="1740221766871" duration="1857000" />
-    </task>
-    <task id="LOCAL-00005" summary="refactor">
-      <option name="closed" value="true" />
-      <created>1736796752874</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1736796752874</updated>
+      <workItem from="1740221766871" duration="2120000" />
     </task>
     <task id="LOCAL-00006" summary="refactor">
       <option name="closed" value="true" />
@@ -517,7 +501,15 @@
       <option name="project" value="LOCAL" />
       <updated>1740161151800</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="refactor selectors">
+      <option name="closed" value="true" />
+      <created>1740223784400</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1740223784400</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -527,7 +519,6 @@
     <option featureType="com.intellij.fileTypeFactory" implementationName=".env" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="change package for test" />
     <MESSAGE value="remove file" />
     <MESSAGE value="added LinerPreloader" />
     <MESSAGE value="added ErrorSnackbar" />
@@ -552,7 +543,8 @@
     <MESSAGE value="refactor" />
     <MESSAGE value="rewritten to RTK 2.0 syntax" />
     <MESSAGE value="refactor code" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor code" />
+    <MESSAGE value="refactor selectors" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor selectors" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
